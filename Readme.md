@@ -5,7 +5,6 @@ This project implements an **AI-powered accident detection and alert system** th
 When an accident is detected, the system:
 - Captures a **snapshot** from the video feed,
 - Logs the **timestamp**,
-- (Optional) Sends an **SMS alert** via Twilio,
 - Updates a **live web dashboard** accessible to emergency responders anywhere via a secure URL.
 
 ---
@@ -44,6 +43,7 @@ AcciVision-AI/
 ├──models.py
 ├── app.py                         # Flask app with auth, routing, dashboard
 ├── real_time_inference.py         # Accident detection engine (multi-stream capable)
+├── stream_handler.py              # Handles video stream input (local/webcam/RTSP)
 ├──dataset
     ├──preprocessed
 	├──accident
@@ -64,6 +64,7 @@ AcciVision-AI/
      ├──login.html
      ├──register.html
      ├──approve_users.html
+     ├──analytics.html
 ├──utils
     ├──__init__.py
     ├──dataset_preparation.py
@@ -113,10 +114,8 @@ Local CCTV or dashcam recordings. # the project already has dataset for normal d
 
 Organize them like this:
 
-dataset/train/accident/Accident1.mp4  
-dataset/train/accident/Accident2.mp4
-dataset/train/normal/Normal1.mp4
-dataset/train/normal/Normal2.mp4
+dataset/train/accident/Accident.mp4  
+dataset/train/normal/Normal.mp4
 
 Then preprocess:
 
@@ -176,7 +175,6 @@ When an accident is detected:
 
     -A snapshot is saved to /snapshots
     -The dashboard updates automatically
-    -
 
 ## 🧭 Web Dashboard
 
