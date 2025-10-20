@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accident Analytics Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { color: #2e7d32; }
+    p { margin-top: 20px; font-size: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>🚦 Accident Analytics</h1>
+  <p>Welcome, {{ current_user.username }} | <a href="{{ url_for('logout') }}">Logout</a></p>
+  <p>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+  </p>
+
+  <hr />
+
+  <h3>Geospatial Data & Accident Density</h3>
+  <p>This page will display maps and analytics to show accident locations over time.</p>
+  <p>Filters by week, month, and year will be added soon.</p>
+
+  <!-- Placeholder div for future map/visualization -->
+  <div id="map" style="width:100%; height: 400px; background-color: #eee; display:flex; align-items:center; justify-content:center;">
+    <em>Map and visualizations will appear here.</em>
+  </div>
+</body>
+</html>

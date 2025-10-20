@@ -1,0 +1,1 @@
+This folder extracts the snapshots of the accident data in a .jpg format for reporting purposes.

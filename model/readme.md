@@ -1,0 +1,1 @@
+This folder contains the model_cnn_lstm.h5 file for the accident detection system.

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🚨 Accident Detection Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; background-color: #f9f9f9; text-align: center; margin: 0; padding: 20px; }
+    h1 { color: #d32f2f; }
+    .card {
+      display: inline-block; background: white; padding: 15px; margin: 10px;
+      border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 340px;
+    }
+    img { width: 100%; border-radius: 6px; }
+    .timestamp { color: #555; font-size: 0.9em; }
+    .location { color: #333; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h1>🚨 Accident Detection Dashboard</h1>
+  <p>Welcome, {{ username }} | <a href="{{ url_for('logout') }}">Logout</a></p>
+  {% if is_admin %}
+    <p><a href="{{ url_for('approve_users') }}">Approve Users</a>
+     | <a href="{{ url_for('analytics') }}">Analytics</a>
+    </p>
+    
+  {% endif %}
+  {% if events %}
+    {% for e in events %}
+      <div class="card">
+        <h3>{{ e.timestamp }}</h3>
+        <img src="/snapshots/{{ e.snapshot }}" alt="Snapshot">
+        <p class="location">📍 {{ e.location }}</p>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No accident events logged yet.</p>
+  {% endif %}
+
+  <!-- 🔁 Auto-refresh every 10 seconds -->
+  <script>
+    setInterval(function() {
+      window.location.reload();
+    }, 10000); // 10,000 milliseconds = 10 seconds
+  </script>
+</body>
+</html>

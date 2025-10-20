@@ -1,0 +1,10 @@
+tensorflow>=2.9
+opencv-python
+geopy
+geocoder
+flask
+tqdm
+numpy
+scikit-learn
+localtunnel
+#pip install -r requirements.txt
