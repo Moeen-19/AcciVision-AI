@@ -161,21 +161,21 @@ Add the camera configuration to camera_config.json:
     ]
 }
 ```
-You can connect:
+<pre>You can connect:
     - Local webcam (cv2.VideoCapture(0)), or
-    - RTSP CCTV feed: cap = cv2.VideoCapture("rtsp://username:password@camera-ip/stream")
+    - RTSP CCTV feed: cap = cv2.VideoCapture("rtsp://username:password@camera-ip/stream")</pre>
 
 Then run the real-time inference script:
 
 ```bash
 python real_time_inference.py 
 ```
-
+<pre>
 When an accident is detected:
 
     -A snapshot is saved to /snapshots
     -The dashboard updates automatically
-
+</pre>
 ## 🧭 Web Dashboard
 
 Start your dashboard:
@@ -183,13 +183,13 @@ Start your dashboard:
 ```bash
 python app.py 
 ```
-Note:
+<pre>Note:
     - Change the IP address in app.py to your local IP address.
     - Change the admin username and password in case you want to use different credentials.
     - Register new users from the dashboard.
     - Approve new users from the dashboard via the "Approve Users" page. It can only be accessed by the admin user login.
     - Users must be approved before logging in. 
-
+</pre>
 Open:
 
 ```bash
@@ -287,8 +287,10 @@ This project is open-source under the MIT License — free to use and modify for
 
 ## 🧑‍💻 Contributors
 
-<Moeen G. Shaikh> — Lead Developer, Model Optimization & System Design
-<Zeenat G. Shaikh> — Frontend, UI Design & Analytics functionality 
+Moeen G. Shaikh — Lead Developer, Model Optimization & System Design\
+Zeenat G. Shaikh — Frontend, UI Design & Analytics  
+---
+
 ---
 
 ## 🌟 Acknowledgments
