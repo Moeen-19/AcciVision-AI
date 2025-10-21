@@ -21,7 +21,7 @@ When an accident is detected, the system:
 
 ✅ **Instant Alert System**
 - Saves snapshots & timestamps  
-- Sends configurable Twilio SMS alerts (optional)  
+- Sends event logs to a secure server with timestamp, location, and snapshot
 
 ✅ **Live Web Dashboard**
 - Flask-powered dashboard showing latest detected accidents  
