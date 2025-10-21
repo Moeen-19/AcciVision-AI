@@ -35,7 +35,7 @@ When an accident is detected, the system:
 
 ## 🧩 Project Structure
 
-AcciVision-AI/
+<pre>AcciVision-AI/
 │
 ├──main.ipynb
 ├──model_cnn_lstm.py
@@ -71,7 +71,7 @@ AcciVision-AI/
     ├──stream_handler.py
 
 ├── requirements.txt               # Python dependencies
-└── README.md
+└── README.md</pre>
  
 
 ---
