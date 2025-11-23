@@ -9,7 +9,8 @@ def build_cnn_lstm_model(sequence_length=16, input_shape=(224,224,3)):
     cnn_base.trainable = False
 
     model = models.Sequential([
-        layers.TimeDistributed(cnn_base, input_shape=(sequence_length,) + input_shape),
+        Input(shape=(sequence_length,) + input_shape),  # Explicit Input layer here
+        layers.TimeDistributed(cnn_base),               # No input_shape here
         layers.LSTM(256, return_sequences=False),
         layers.Dense(128, activation='relu'),
         layers.Dropout(0.5),
